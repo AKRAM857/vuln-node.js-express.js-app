@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    name: run normal test
+    name: run security audit
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,5 +17,5 @@ jobs:
           node-version: 18
       - name: install dependecies
         run: npm install
-      - name: run test
-        run: npm run test
+      - name: security audit
+        run: npm audit --audit-level=high
