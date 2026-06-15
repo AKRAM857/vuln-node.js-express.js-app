@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: 24
       - name: install dependecies
-        run: npm clean-install --no-fund
+        run: npm install
       - name: run test
         run: npm run test
