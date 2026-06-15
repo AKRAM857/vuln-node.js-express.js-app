@@ -11,7 +11,7 @@ jobs:
       contents: read
     name: run normal test
     steps:
-      - uses: ./.github/actions/setup-node
+      - uses: actions/setup-node
         with:
           node-version: 20
       - uses: actions/checkout@v4
