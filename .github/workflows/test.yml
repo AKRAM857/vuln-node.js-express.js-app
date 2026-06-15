@@ -11,11 +11,9 @@ jobs:
       contents: read
     name: run normal test
     steps:
-      - name: install node
       - uses: ./.github/actions/setup-node
         with:
           node-version: 20
-      - name: extract code
       - uses: actions/checkout@v4
       - name: install dependecies
         run: npm clean-install --no-fund
