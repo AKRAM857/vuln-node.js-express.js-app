@@ -1,0 +1,23 @@
+name: test
+on:
+  push:
+    branches: main
+  pull_requests:
+    branches: main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    name: run normal test
+    steps:
+      - name: install node
+      - uses: ./.github/actions/setup-node
+        with:
+          node-version: 20
+      - name: extract code
+      - uses: actions/checkout@v4
+      - name: install dependecies
+        run: npm clean-install --no-fund
+      - name: run test
+        run: npm run test
